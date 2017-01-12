@@ -62,7 +62,7 @@ void loop() {
        
       smtp.addHeader("Subject", subject2);
       smtp.addRecipient(to);
-      result = smtp.sendMessage(from, message);
+      result = smtp.sendMessage(from, message, strlen(message));
       Serial.printf("[SMTP] Message send result: %i %s %s\n", result, smtp.getErrorMessage(), smtp.errorToString(result).c_str());
       
       smtp.end();
